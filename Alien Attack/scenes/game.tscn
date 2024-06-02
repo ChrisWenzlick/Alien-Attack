@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://phik68adoeif"]
+[gd_scene load_steps=6 format=3 uid="uid://phik68adoeif"]
 
 [ext_resource type="Texture2D" uid="uid://d1684wtgpsdet" path="res://assets/textures/bg.png" id="1_2nduc"]
 [ext_resource type="PackedScene" uid="uid://bextmjaru6fjf" path="res://scenes/player.tscn" id="2_bhhiv"]
 [ext_resource type="PackedScene" uid="uid://belshnrst76d2" path="res://scenes/rocket.tscn" id="3_2vf01"]
+[ext_resource type="PackedScene" uid="uid://drq1li86vilw7" path="res://scenes/enemy.tscn" id="4_c8l8x"]
+[ext_resource type="PackedScene" uid="uid://dfgajq7bi1rex" path="res://scenes/enemy_spawner.tscn" id="4_gdkd4"]
 
 [node name="Game" type="Node2D"]
 
@@ -15,3 +17,6 @@ stretch_mode = 1
 [node name="Player" parent="." instance=ExtResource("2_bhhiv")]
 position = Vector2(75, 360)
 rocket_scene = ExtResource("3_2vf01")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_gdkd4")]
+enemy_scene = ExtResource("4_c8l8x")
