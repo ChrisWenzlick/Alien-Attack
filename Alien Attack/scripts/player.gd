@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 
+signal took_damage()
+
+
 @onready var rocket_container = $RocketContainer
 
 @export var move_speed = 30000.0
@@ -34,3 +37,11 @@ func shoot():
 	var rocket_instance = rocket_scene.instantiate()
 	rocket_container.add_child(rocket_instance)
 	rocket_instance.global_position = global_position + Vector2(60, 0)
+
+
+func take_damage():
+	emit_signal("took_damage")
+
+
+func die():
+	queue_free()

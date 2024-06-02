@@ -14,3 +14,8 @@ func die():
 
 func _on_visibility_notifier_screen_exited():
 	queue_free()
+
+
+func _on_body_entered(body):
+	body.take_damage()
+	queue_free()
