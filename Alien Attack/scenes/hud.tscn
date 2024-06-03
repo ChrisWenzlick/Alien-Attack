@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy7gvlpk2l604"]
+
+[ext_resource type="FontFile" uid="uid://bp8pvbf1kanp8" path="res://assets/font/Kenney Blocks.ttf" id="1_xscj3"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_ym43k"]
+[ext_resource type="Texture2D" uid="uid://dhok52cnm3ytg" path="res://assets/textures/orb.png" id="3_g5ai4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tjuhg"]
+font = ExtResource("1_xscj3")
+font_size = 40
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ym43k")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 330.0
+offset_bottom = 90.0
+text = "SCORE: 9999"
+label_settings = SubResource("LabelSettings_tjuhg")
+
+[node name="LifeUnit_01" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 90.0
+offset_right = 156.0
+offset_bottom = 208.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_g5ai4")
+
+[node name="LifeUnit_02" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 90.0
+offset_right = 236.0
+offset_bottom = 208.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_g5ai4")
+
+[node name="LifeUnit_03" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 90.0
+offset_right = 316.0
+offset_bottom = 208.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_g5ai4")
+
+[node name="LifeUnit_04" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 90.0
+offset_right = 396.0
+offset_bottom = 208.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_g5ai4")
+
+[node name="LifeUnit_05" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 90.0
+offset_right = 476.0
+offset_bottom = 208.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_g5ai4")

@@ -1,14 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://phik68adoeif"]
+[gd_scene load_steps=8 format=3 uid="uid://phik68adoeif"]
 
 [ext_resource type="Texture2D" uid="uid://d1684wtgpsdet" path="res://assets/textures/bg.png" id="1_2nduc"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_lim2n"]
 [ext_resource type="PackedScene" uid="uid://bextmjaru6fjf" path="res://scenes/player.tscn" id="2_bhhiv"]
+[ext_resource type="PackedScene" uid="uid://cy7gvlpk2l604" path="res://scenes/hud.tscn" id="2_rmc78"]
 [ext_resource type="PackedScene" uid="uid://belshnrst76d2" path="res://scenes/rocket.tscn" id="3_2vf01"]
 [ext_resource type="PackedScene" uid="uid://drq1li86vilw7" path="res://scenes/enemy.tscn" id="4_c8l8x"]
 [ext_resource type="PackedScene" uid="uid://dfgajq7bi1rex" path="res://scenes/enemy_spawner.tscn" id="4_gdkd4"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lim2n")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("2_rmc78")]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1280.0
@@ -24,3 +29,4 @@ rocket_scene = ExtResource("3_2vf01")
 enemy_scene = ExtResource("4_c8l8x")
 
 [connection signal="took_damage" from="Player" to="." method="_on_player_took_damage"]
+[connection signal="enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_enemy_spawned"]

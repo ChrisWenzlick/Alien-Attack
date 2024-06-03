@@ -1,6 +1,9 @@
 extends Node2D
 
 
+signal enemy_spawned(enemy_instance)
+
+
 @export var enemy_scene: PackedScene
 
 var spawn_positions: Array
@@ -13,7 +16,7 @@ func _ready():
 func spawn():
 	var enemy_instance = enemy_scene.instantiate()
 	enemy_instance.global_position = spawn_positions.pick_random().global_position
-	add_child(enemy_instance)
+	emit_signal("enemy_spawned", enemy_instance)
 
 
 func _on_timer_timeout():

@@ -1,6 +1,9 @@
 extends Area2D
 
 
+signal enemy_died
+
+
 @export var move_speed = 200
 
 
@@ -9,6 +12,7 @@ func _physics_process(delta):
 
 
 func die():
+	emit_signal("enemy_died")
 	queue_free()
 
 
