@@ -4,6 +4,8 @@ extends Node2D
 @onready var player = $Player
 @onready var hud = $UI/HUD
 @onready var ui = $UI
+@onready var enemy_hit_sound = $EnemyHitSound
+@onready var explode_sound = $ExplodeSound
 
 @export var player_hp = 5
 
@@ -18,6 +20,7 @@ func _ready():
 
 
 func _on_player_took_damage():
+	explode_sound.play()
 	player_hp -= 1
 	hud.set_hp(player_hp)
 	if player_hp <= 0:
@@ -36,5 +39,6 @@ func _on_enemy_spawner_enemy_spawned(enemy_instance):
 
 
 func _on_enemy_died():
+	enemy_hit_sound.play()
 	score += 100
 	hud.set_score(score)
