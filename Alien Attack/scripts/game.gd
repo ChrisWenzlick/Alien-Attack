@@ -42,3 +42,8 @@ func _on_enemy_died():
 	enemy_hit_sound.play()
 	score += 100
 	hud.set_score(score)
+
+
+func _on_enemy_spawner_path_enemy_spawned(path_enemy_instance):
+	add_child(path_enemy_instance)
+	path_enemy_instance.enemy.connect("enemy_died", _on_enemy_died)
